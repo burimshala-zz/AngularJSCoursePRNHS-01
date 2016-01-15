@@ -9,8 +9,18 @@
 <div class="container" ng-controller="Products as ProductsCtrl">
     Welcome to products page
 
+    <div class="input-group">
+        <select name="orderBy" id="orderBy" ng-model="orderByModel">
+            <option value="name">Name</option>
+            <option value="color">Color</option>
+            <option value="material">Material</option>
+            <option value="price">Price</option>
+            <option value="type">Type</option>
+        </select>
+    </div>
+
     <ul>
-        <li ng-repeat="product in ProductsCtrl.all">
+        <li ng-repeat="product in ProductsCtrl.all | orderBy: orderByModel">
             <h1>{{ product.name }}</h1>
             <p>You can by it on : {{ product.color }}</p>
             <p>It's made with : {{ product.material }}</p>
