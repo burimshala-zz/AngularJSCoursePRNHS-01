@@ -6,7 +6,7 @@
     angular.module('store').controller('Products', Products);
 
     function Products() {
-
+        //this is from ng-repeat
         var vm = this;
         vm.all = [];
         vm.buy = buy;
