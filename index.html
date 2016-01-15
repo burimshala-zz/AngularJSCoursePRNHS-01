@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <title>Products</title>
+</head>
+<body>
+<div class="container" ng-controller="Products as ProductsCtrl">
+    Welcome to products page
+
+    <ul>
+        <li ng-repeat="product in ProductsCtrl.all">
+            <h1>{{ product.name }}</h1>
+            <p>You can by it on : {{ product.color }}</p>
+            <p>It's made with : {{ product.material }}</p>
+            <p>It costs : {{ product.price }}</p>
+            <p>Is cousin with : {{ product.type }}</p>
+            <p><img ng-src="{{product.thumbnail}}" alt="{{product.name}}"/></p>
+            <a href="#" ng-click="ProductsCtrl.buy(product)">Buy !!</a>
+        </li>
+    </ul>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Faker/3.0.1/faker.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+<script src="app/application.js"></script>
+</body>
+</html>
