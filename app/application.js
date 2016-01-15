@@ -6,7 +6,7 @@
     angular.module('store').controller('Products', Products);
 
     function Products() {
-
+        //this is a comment from filter
         var vm = this;
         vm.all = [];
         vm.buy = buy;
