@@ -16,12 +16,17 @@
 
     <p ng-if="search">Searchin for : {{ search }}</p>
     <ul>
-        <li ng-repeat="product in ProductsCtrl.all | filter:search">
+        <li ng-repeat="product in ProductsCtrl.all | filter:{ name:search}">
             <h1>{{ product.name }}</h1>
+
             <p>You can by it on : {{ product.color }}</p>
+
             <p>It's made with : {{ product.material }}</p>
+
             <p>It costs : {{ product.price }}</p>
+
             <p>Is cousin with : {{ product.type }}</p>
+
             <p><img ng-src="{{product.thumbnail}}" alt="{{product.name}}"/></p>
             <a href="#" ng-click="ProductsCtrl.buy(product)">Buy !!</a>
         </li>
