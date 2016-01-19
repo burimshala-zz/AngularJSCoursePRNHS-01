@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('store', []);
+    angular.module('store', ['ngAnimate']);
 
     angular.module('store').controller('Products', Products);
 

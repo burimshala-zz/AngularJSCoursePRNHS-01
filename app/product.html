@@ -1,0 +1,17 @@
+<div class="col-sm-6">
+    <div class="col-sm-6">
+        <a href="{{product.thumbnail}}" class="thumbnail"><img ng-src="{{product.thumbnail}}" alt="{{product.name}}"/></a>
+    </div>
+    <div class="col-sm-6">
+        <a href="#" ng-click="onClick(product)"><i class="fa fa-edit"></i>Buy</a>
+
+        <h2>{{ product.name}}</h2>
+
+        <h3>£{{ product.price }}</h3>
+        <ul class="list-group">
+            <li class="list-group-item">{{ product.material }}</li>
+            <li class="list-group-item">{{ product.type }}</li>
+            <li class="list-group-item" ng-style="{color: product.color}">{{ product.color }}</li>
+        </ul>
+    </div>
+</div>
