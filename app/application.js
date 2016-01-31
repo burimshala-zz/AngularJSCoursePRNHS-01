@@ -1,19 +1,31 @@
 (function () {
     'use strict';
 
-    angular.module('store', ['ngAnimate']);
+    //setter
+    angular.module('store', ['ngAnimate', 'ngMaterial']);
 
+    //controller starts from here
     angular.module('store').controller('Products', Products);
 
-    function Products() {
+    Products.$inject = ['$scope', '$http'];
+
+    function Products($scope, $a) {
 
         var vm = this;
+
         vm.all = [];
+        vm.cart = [];
         vm.buy = buy;
+        vm.removeFromCart = removeFromCart;
 
+        ////
         function buy(product) {
+            vm.cart.push(product);
+            alert('Thanks for buying : ' + product.name);
+        }
 
-            alert("Thanks for buying : " + product.name);
+        function removeFromCart(product) {
+            vm.cart.splice(vm.cart.indexOf(product), 1);
         }
 
         var getAllProducts = function () {
